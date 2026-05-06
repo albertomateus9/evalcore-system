@@ -1,46 +1,48 @@
 # EvalCore System
 
-Bem-vindo ao **EvalCore**, um sistema avançado de avaliação por comparações binárias (Pairwise Comparison). 
+Pairwise-comparison evaluation system concept for hackathons, seminars, and project-ranking workflows.
 
-Este monorepo foi projetado como um desafio de engenharia de software para Hackathons e seminários de ensino técnico.
+## Overview
 
-## Como funciona a Avaliação por Pares (Pairwise)?
+EvalCore System explores an evaluation model based on binary comparisons instead of direct numeric grades. Judges compare two projects at a time, and the backend can use ranking methods such as Elo-style updates or Bayesian scoring to produce a more consistent global ranking.
 
-Em avaliações tradicionais, juízes costumam dar notas de 1 a 10 para projetos. Isso gera vieses (um juiz "bonzinho" dá 9 e 10 para todos, enquanto um juiz mais rígido dá no máximo 7).
+## Problem
 
-O **EvalCore** resolve isso utilizando comparações binárias. O sistema apresenta dois projetos para o juiz, e ele simplesmente escolhe qual é o melhor: **A ou B**. 
-Ao longo de várias rodadas, um algoritmo de ranqueamento (como o sistema Elo usado no Xadrez, ou matemática Bayesiana) é aplicado no backend para gerar um Ranking Global incrivelmente preciso e livre de distorções e vieses individuais.
+Traditional grading can suffer from judge bias, inconsistent calibration, and inflated scores. Pairwise comparison reduces the cognitive load on judges and can generate stronger relative rankings across many projects.
 
-## O Desafio (Para os Alunos)
+## Solution Concept
 
-Este repositório contém a **API (Backend)** estruturada em Clean Architecture com TypeScript, Express e Mongoose, além da infraestrutura básica para o cálculo das pontuações ELO/Bayesianas.
+- Present pairs of projects to evaluators.
+- Record the selected winner for each comparison.
+- Update project ranking scores after each vote.
+- Expose ranking data to a dashboard.
 
-O **Dashboard (Frontend)** está inicializado, porém **vazio**.
+## Architecture
 
-**A Missão:**
-Durante o Hackathon, os alunos deverão consumir a API do EvalCore e construir do zero a interface visual (Dashboard) em React. A interface deverá:
-1. Ter uma tela para o Juiz escolher entre Projeto A e Projeto B.
-2. Ter uma tela de Ranking em Tempo Real (Leaderboard).
+- Backend API for projects, comparisons, votes, and ranking updates.
+- Dashboard for project lists, active comparisons, and leaderboard views.
+- Modular ranking logic that can be replaced or extended.
 
-## Estrutura do Monorepo
+## Stack
 
-*   `api/`: Backend em Node.js e TypeScript seguindo rigorosamente a Clean Architecture (`domain`, `application`, `interface_adapters`, `infrastructure`).
-*   `dashboard/`: Frontend React construído com Vite (TypeScript).
+- TypeScript
+- Node.js / Express
+- MongoDB / Mongoose
+- React dashboard concept
+- Clean Architecture-inspired separation of concerns
 
-## Como rodar o projeto
+## Development Direction
 
-1. **Backend:**
-    ```bash
-    cd api
-    npm install
-    npm run dev
-    ```
+- Implement comparison generation.
+- Add ranking update service.
+- Add persistence models for projects, judges, and votes.
+- Build dashboard screens for voting and leaderboard views.
+- Add tests for ranking edge cases and duplicate votes.
 
-2. **Frontend:**
-    ```bash
-    cd dashboard
-    npm install
-    npm run dev
-    ```
+## Professional Context
 
-Boa sorte e que vença o melhor projeto!
+This repository demonstrates software architecture, educational event tooling, ranking systems, and hackathon-ready product thinking.
+
+## License
+
+MIT. See [LICENSE](LICENSE).
