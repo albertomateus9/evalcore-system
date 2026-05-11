@@ -1,48 +1,28 @@
 # EvalCore System
 
-Pairwise-comparison evaluation system concept for hackathons, seminars, and project-ranking workflows.
+Conceito de avaliacao por comparacao pareada para hackathons, bancas e ranqueamento de projetos.
 
-## Overview
+**Demo:** https://albertomateus9.github.io/evalcore-system/
 
-EvalCore System explores an evaluation model based on binary comparisons instead of direct numeric grades. Judges compare two projects at a time, and the backend can use ranking methods such as Elo-style updates or Bayesian scoring to produce a more consistent global ranking.
+## Visão Geral
 
-## Problem
+EvalCore System é um projeto de vitrine do portfólio técnico de Alberto Mateus P. da Gama. O objetivo é demonstrar maturidade profissional em redes, telecomunicações, automação, educação tecnológica e sistemas aplicados.
 
-Traditional grading can suffer from judge bias, inconsistent calibration, and inflated scores. Pairwise comparison reduces the cognitive load on judges and can generate stronger relative rankings across many projects.
+## Contexto Profissional
 
-## Solution Concept
+- Infraestrutura de redes, telecomunicações e operação técnica.
+- Documentação clara para leitura pública no GitHub.
+- Dados sintéticos ou escopo conceitual, sem exposição de clientes, alunos ou documentos internos.
+- Estrutura pensada para evolução incremental.
 
-- Present pairs of projects to evaluators.
-- Record the selected winner for each comparison.
-- Update project ranking scores after each vote.
-- Expose ranking data to a dashboard.
+## Como Rodar
 
-## Architecture
+Abra `index.html` no navegador ou acesse a demo publicada no GitHub Pages.
 
-- Backend API for projects, comparisons, votes, and ranking updates.
-- Dashboard for project lists, active comparisons, and leaderboard views.
-- Modular ranking logic that can be replaced or extended.
+## Política De Dados
 
-## Stack
+Nenhum dado real de estudantes, clientes, credenciais, telefones, e-mails pessoais ou documentos internos é publicado neste repositório.
 
-- TypeScript
-- Node.js / Express
-- MongoDB / Mongoose
-- React dashboard concept
-- Clean Architecture-inspired separation of concerns
+## Licença
 
-## Development Direction
-
-- Implement comparison generation.
-- Add ranking update service.
-- Add persistence models for projects, judges, and votes.
-- Build dashboard screens for voting and leaderboard views.
-- Add tests for ranking edge cases and duplicate votes.
-
-## Professional Context
-
-This repository demonstrates software architecture, educational event tooling, ranking systems, and hackathon-ready product thinking.
-
-## License
-
-MIT. See [LICENSE](LICENSE).
+MIT. Consulte [LICENSE](LICENSE).
